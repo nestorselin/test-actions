@@ -15,7 +15,5 @@ jobs:
 #       start redocly
       - name: Redocly run
         run: redocly lint test.yaml
-      - if: ${{ failure() }}
-          run: exit 0
 
 
