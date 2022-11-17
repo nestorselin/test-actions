@@ -1,0 +1,22 @@
+on:
+  - push
+  - pull_request
+name: redocly
+jobs:
+  redoclyTest:
+    name: Redocly test
+    runs-on: ubuntu-latest
+      steps:
+
+        - name: Checkout
+          uses: actions/checkout@v2
+#       install redocly
+        - name: Redocly install
+          uses: @redocly/cli
+        - name: Redocly run
+          run: redocly lint test.yaml
+
+        - if: ${{ failure() }}
+            run: exit 0
+
+
