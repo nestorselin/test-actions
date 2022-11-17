@@ -1,0 +1,20 @@
+on:
+  - push
+  - pull_request
+name: CI
+jobs:
+  spectralChecks:
+    name: Spectral checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test this action against an incorrect file.
+        id: expect-failure
+        continue-on-error: true
+        uses: ./
+        with:
+          file_glob: ./fixtures/*.yml
+          spectral_ruleset: .spectral.json
+
+      - if: ${{ failure() }}
+        run: exit 0
