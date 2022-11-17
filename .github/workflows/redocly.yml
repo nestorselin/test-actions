@@ -9,11 +9,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-#       install redocly
-      - name: Redocly install
-        run: npm install @redocly/cli -g
-#       start redocly
-      - name: Redocly run
-        run: redocly lint test.yaml
 
+      - name: Checkout
+#        uses: redocly-cli
+#          - path: ... .yaml
+        uses: ./
+          with:
+            file_glob: ./index.ts
 
+  #       run:  function lint
+
+#
+#
+##       install redocly
+#      - name: Redocly install
+#        run: npm install @redocly/cli -g
+##       start redocly
+#      - name: Redocly run
+#        run: с
+#
+#

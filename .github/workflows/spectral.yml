@@ -13,7 +13,7 @@
 #        continue-on-error: true
 #        uses: stoplightio/spectral-action@latest
 #        with:
-#          file_glob: test.yaml
+#          file_glob: test.yml
 #
 #      - if: ${{ failure() }}
 #        run: exit 0

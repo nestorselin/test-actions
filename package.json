@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@redocly/openapi-core": "^1.0.0-beta.113",
+    "outdent": "^0.8.0"
+  }
 }
